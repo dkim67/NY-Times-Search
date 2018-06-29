@@ -93,7 +93,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        // Declare the variables
+      // Declare the variables
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     var searchTerm = "earthquake";
     var startDate = 20070704;
@@ -103,6 +103,8 @@
     var endDateProvided = false;
 
     console.log(url);
+    var search = $("#search-term").val().trim();
+
 
     $("#searchButton").on("click", function () {
 
@@ -113,8 +115,8 @@
             endDate = $("end-date").val();
         }
         
-        var search = $("#search-term").val().trim();
-        var resultsLength = $("#record-number").val().trim();
+         search = $("#search-term").val().trim();
+        var numberRecords = $("#record-number").val().trim();
 
         //Set the url
         url += '?' + $.param({
@@ -143,10 +145,14 @@
 
             // Loop through the results
 
-            for (i = 0; i < resultsLength; i++) {
+            for (i = 0; i < numberRecords; i++) {
                 var headlineText = result.response.docs[i].headline.main;
+                var link = result.response.docs[i].web_url;
                 var articleDiv = $("<div>");
-                var newTitle = $("<h2>").text(headlineText);
+                var newTitle = $("<a>");
+                newTitle.attr("href", link);
+                newTitle.attr("target", "_blank");
+                newTitle.text(headlineText);
                 articleDiv.css("background-color", "black");
                 articleDiv.css("color", "white");
                 articleDiv.append(newTitle);
