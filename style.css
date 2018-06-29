@@ -1,0 +1,54 @@
+body, html {
+    height: 100%;
+}
+
+p, input {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.box {
+    border-style: groove;
+    background-color: rgba(55, 55, 55, 0.783);
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    
+}
+
+.boxHeader {
+    color: white;
+    background-color: black;
+    padding-left: 1px;
+    padding-top: 15px;
+    
+    
+}
+
+#bg {
+    background-image: url("ny.jpg");
+
+    /* Full height */
+    min-height: 100%; 
+    background-attachment: fixed;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* position: fixed; */
+}
+
+#title {
+    color: white;
+    margin-top: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-emphasis: outline;
+    text-outline: 2px, black;
+    text-shadow: 5px, 5px, black;
+}
+
+#searchButton, #clearButton {
+    margin-left: 20px;
+    margin-right: 20px;
+}
